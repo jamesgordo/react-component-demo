@@ -17,17 +17,20 @@ export default function Sample() {
           {
             price: "$49.99",
             available: true,
-            name: "Football"
+            name: "Football",
+            image: "https://picsum.photos/id/15/150/150"
           },
           {
             price: "$9.99",
             available: true,
-            name: "Baseball"
+            name: "Baseball",
+            image: "https://picsum.photos/id/25/150/150"
           },
           {
             price: "$29.99",
             available: false,
-            name: "Basketball"
+            name: "Basketball",
+            image: "https://picsum.photos/id/51/150/150"
           }
         ]
       },
@@ -38,19 +41,22 @@ export default function Sample() {
             category: "Electronics",
             price: "$99.99",
             available: true,
-            name: "iPod Touch"
+            name: "iPod Touch",
+            image: "https://picsum.photos/id/91/150/150"
           },
           {
             category: "Electronics",
             price: "$399.99",
             available: false,
-            name: "iPhone 5"
+            name: "iPhone 5",
+            image: "https://picsum.photos/id/101/150/150"
           },
           {
             category: "Electronics",
             price: "$199.99",
             available: true,
-            name: "Nexus 7"
+            name: "Nexus 7",
+            image: "https://picsum.photos/id/1001/150/150"
           }
         ]
       }
@@ -87,12 +93,12 @@ export default function Sample() {
   };
 
   return (
-    <>
-      <h1>Component Style Implementation</h1>
+    <div className="p-4">
+      <h1 className="text-xl mb-2">Component Style Implementation</h1>
 
       <Filter onSearch={setKeyword} onCheck={setInStockOnly} />
 
       <CategoryList categories={categories} />
-    </>
+    </div>
   );
 }
