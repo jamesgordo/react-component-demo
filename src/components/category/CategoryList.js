@@ -1,4 +1,5 @@
 import CategoryListItem from "./CategoryListItem.js";
+import PropTypes from "prop-types";
 
 export default function CategoryList({ categories }) {
   return (
@@ -15,3 +16,11 @@ export default function CategoryList({ categories }) {
     </div>
   );
 }
+
+CategoryList.defaultProps = {
+  categories: []
+};
+
+CategoryList.propTypes = {
+  categories: PropTypes.array
+};
