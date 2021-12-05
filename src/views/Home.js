@@ -15,17 +15,20 @@ export default function Home() {
           {
             price: "$49.99",
             available: true,
-            name: "Football"
+            name: "Football",
+            image: "https://picsum.photos/id/15/150/150"
           },
           {
             price: "$9.99",
             available: true,
-            name: "Baseball"
+            name: "Baseball",
+            image: "https://picsum.photos/id/25/150/150"
           },
           {
             price: "$29.99",
             available: false,
-            name: "Basketball"
+            name: "Basketball",
+            image: "https://picsum.photos/id/51/150/150"
           }
         ]
       },
@@ -36,19 +39,22 @@ export default function Home() {
             category: "Electronics",
             price: "$99.99",
             available: true,
-            name: "iPod Touch"
+            name: "iPod Touch",
+            image: "https://picsum.photos/id/91/150/150"
           },
           {
             category: "Electronics",
             price: "$399.99",
             available: false,
-            name: "iPhone 5"
+            name: "iPhone 5",
+            image: "https://picsum.photos/id/101/150/150"
           },
           {
             category: "Electronics",
             price: "$199.99",
             available: true,
-            name: "Nexus 7"
+            name: "Nexus 7",
+            image: "https://picsum.photos/id/1001/150/150"
           }
         ]
       }
@@ -62,11 +68,11 @@ export default function Home() {
 
       category.products.map((product) => {
         if (keyword && product.name.toLowerCase().indexOf(keyword) === -1) {
-          return;
+          return product;
         }
 
         if (inStockOnly && !product.available) {
-          return;
+          return product;
         }
 
         products.push(product);
@@ -85,58 +91,59 @@ export default function Home() {
   };
 
   return (
-    <>
-      <h1>Usual Implementation</h1>
+    <div className="p-4">
+      <h1 className="text-xl mb-2">Usual Implementation</h1>
 
-      <div style={{ border: "2px solid blue", padding: "10px" }}>
+      <div className="border-2 border-white p-4">
         <input
+          onKeyUp={(e) => setKeyword(e.target.value)}
           type="text"
           placeholder="Enter Search Keyword..."
-          onKeyUp={(e) => setKeyword(e.target.value)}
+          className="border rounded-md border-gray-400 p-2 mb-2 text-sm"
         />
         <div>
-          <label>
+          <label className="flex items-center justify-center">
             <input
               type="checkbox"
               onChange={(e) => setInStockOnly(e.target.checked)}
             />
-            <span>Show In Stock Only</span>
+            <span className="text-sm ml-2">Show In Stock Only</span>
           </label>
         </div>
       </div>
 
-      <div
-        style={{
-          border: "2px solid green",
-          padding: "10px",
-          marginTop: "10px"
-        }}
-      >
+      <div className="border-2 border-white p-4 mt-4">
         {categories.map((category, index) => {
           return (
-            <div
-              key={index}
-              style={{
-                border: "2px solid brown",
-                padding: "10px",
-                marginTop: "10px"
-              }}
-            >
+            <div key={index} className="border-2 border-white p-4 mb-4">
               <h3>{category.name}</h3>
-              {category.products.map((product, key) => {
-                return (
-                  <div
-                    key={key}
-                    style={{ color: product.available ? "black" : "red" }}
-                  >
-                    {product.name} {product.price}
-                  </div>
-                );
-              })}
+              <div class="grid grid-cols-3 gap-4">
+                {category.products.map((product, key) => {
+                  return (
+                    <div class="border border-white p-2">
+                      <img
+                        src={product.image}
+                        width={150}
+                        height={150}
+                        alt={product.name}
+                        class="m-auto rounded-lg"
+                      />
+                      <p
+                        key={key}
+                        className={
+                          product.available ? "text-gray-900" : "text-red-600"
+                        }
+                      >
+                        {product.name} {product.price}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
