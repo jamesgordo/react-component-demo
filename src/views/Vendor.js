@@ -27,7 +27,7 @@ export default function Vendor() {
   ];
 
   return (
-    <div className="p-4">
+    <div className="p-4 max-w-2xl mx-auto">
       <h1 className="text-xl font-bold mb-4">Nike</h1>
 
       <p className="text-left text-sm mb-4">
@@ -36,6 +36,7 @@ export default function Vendor() {
         The Latest Releases Today.
       </p>
 
+      <h3 className="font-bold mb-3 mt-8">Latest Products</h3>
       <ProductList products={products} />
 
       <h3 className="font-bold mb-3 mt-8">Component Using Default Props</h3>

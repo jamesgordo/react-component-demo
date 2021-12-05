@@ -8,11 +8,11 @@ import Vendor from "./views/Vendor";
 export default function App() {
   return (
     <div className="App">
-      <nav style={{ marginBottom: "10px" }}>
-        <CustomLink to="/" style={{ marginRight: "10px" }}>
+      <nav className="my-8">
+        <CustomLink to="/" className="mr-4">
           Common Implementation
         </CustomLink>
-        <CustomLink to="/component-style" style={{ marginRight: "10px" }}>
+        <CustomLink to="/component-style" className="mr-4">
           Component Style
         </CustomLink>
         <CustomLink to="/vendor">Vendor Profile</CustomLink>

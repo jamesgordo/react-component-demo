@@ -93,7 +93,7 @@ export default function Sample() {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 max-w-2xl mx-auto">
       <h1 className="text-xl mb-2">Component Style Implementation</h1>
 
       <Filter onSearch={setKeyword} onCheck={setInStockOnly} />

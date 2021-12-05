@@ -91,7 +91,7 @@ export default function Home() {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 max-w-2xl mx-auto">
       <h1 className="text-xl mb-2">Usual Implementation</h1>
 
       <div className="border-2 border-white p-4">
@@ -117,19 +117,18 @@ export default function Home() {
           return (
             <div key={index} className="border-2 border-white p-4 mb-4">
               <h3>{category.name}</h3>
-              <div class="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 {category.products.map((product, key) => {
                   return (
-                    <div class="border border-white p-2">
+                    <div key={key} className="border border-white p-2">
                       <img
                         src={product.image}
                         width={150}
                         height={150}
                         alt={product.name}
-                        class="m-auto rounded-lg"
+                        className="m-auto rounded-lg"
                       />
                       <p
-                        key={key}
                         className={
                           product.available ? "text-gray-900" : "text-red-600"
                         }
