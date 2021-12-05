@@ -1,15 +1,16 @@
 export default function Filter({ onSearch, onCheck }) {
   return (
-    <div style={{ border: "2px solid blue", padding: "10px" }}>
+    <div className="border-2 border-blue-500 p-4">
       <input
+        onKeyUp={(e) => onSearch(e.target.value)}
         type="text"
         placeholder="Enter Search Keyword..."
-        onKeyUp={(e) => onSearch(e.target.value)}
+        className="border rounded-md border-gray-400 p-2 mb-2 text-sm"
       />
       <div>
-        <label>
-          <input type="checkbox" onChange={(e) => onCheck(e.target.checked)} />
-          <span>Show In Stock Only</span>
+        <label className="flex items-center justify-center">
+          <input onChange={(e) => onCheck(e.target.checked)} type="checkbox" />
+          <span className="text-sm ml-2">Show In Stock Only</span>
         </label>
       </div>
     </div>

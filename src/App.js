@@ -9,7 +9,7 @@ export default function App() {
     <div className="App">
       <nav style={{ marginBottom: "10px" }}>
         <CustomLink to="/" style={{ marginRight: "10px" }}>
-          Usual Implementation
+          Common Implementation
         </CustomLink>
         <CustomLink to="/component-style">Component Style</CustomLink>
       </nav>

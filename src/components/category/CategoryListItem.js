@@ -1,18 +1,15 @@
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 
 export default function CategoryListItem({ name, products }) {
   return (
-    <div
-      style={{
-        border: "2px solid brown",
-        padding: "10px",
-        marginTop: "10px"
-      }}
-    >
+    <div className="border-2 border-yellow-500 p-4 mb-4">
       <h3>{name}</h3>
-      {products.map((product, index) => {
-        return <Product key={index} product={product} />;
-      })}
+
+      <div class="grid grid-cols-3 gap-4">
+        {products.map((product, index) => {
+          return <ProductCard key={index} product={product} />;
+        })}
+      </div>
     </div>
   );
 }

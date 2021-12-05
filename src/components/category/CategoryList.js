@@ -2,13 +2,7 @@ import CategoryListItem from "./CategoryListItem.js";
 
 export default function CategoryList({ categories }) {
   return (
-    <div
-      style={{
-        border: "2px solid green",
-        padding: "10px",
-        marginTop: "10px"
-      }}
-    >
+    <div className="border-2 border-green-400 p-4 mt-4">
       {categories.map((category, index) => {
         return (
           <CategoryListItem
