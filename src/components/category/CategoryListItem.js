@@ -1,15 +1,22 @@
-import ProductCard from "./ProductCard";
+import ProductList from "../products/ProductList";
+import PropTypes from "prop-types";
 
 export default function CategoryListItem({ name, products }) {
   return (
     <div className="border-2 border-yellow-500 p-4 mb-4">
       <h3>{name}</h3>
 
-      <div class="grid grid-cols-3 gap-4">
-        {products.map((product, index) => {
-          return <ProductCard key={index} product={product} />;
-        })}
-      </div>
+      <ProductList products={products} />
     </div>
   );
 }
+
+CategoryListItem.defaultProps = {
+  name: "Your Category Name Here",
+  products: []
+};
+
+CategoryListItem.propTypes = {
+  name: PropTypes.string,
+  products: PropTypes.array
+};
